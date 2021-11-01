@@ -1,7 +1,28 @@
-.someClass {
-
+.item {
+    margin-left: 20px;
+    margin-top: 10px
 }
+
 
 .error {
     border: 1px solid red;
+}
+
+.error_message {
+    color: red;
+}
+
+.input {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+}
+
+.button {
+    margin-right: 10px;
+    margin-top: 10px;
+    background: #282c34;
+    border-color: #282c34;
+    color: white;
+    cursor: pointer;
 }

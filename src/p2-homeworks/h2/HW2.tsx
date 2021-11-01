@@ -8,7 +8,7 @@ export type AffairType = {
     name: string
     priority: AffairPriorityType
 }
-export type FilterType = 'all' | AffairPriorityType
+    export type FilterType = 'all' | AffairPriorityType
 
 // constants
     const defaultAffairs: Array<AffairType> = [
