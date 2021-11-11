@@ -1,12 +1,14 @@
 import React, {ChangeEvent, KeyboardEvent} from 'react'
 import s from './Greeting.module.css'
+import SuperInputText from "../h4/common/c1-SuperInputText/SuperInputText";
+import SuperButton from "../h4/common/c2-SuperButton/SuperButton";
 
 type GreetingPropsType = {
     name: string // need to fix any
-    setNameCallback: (name: string) => void // need to fix any
-    addUser: (name: string) => void // need to fix any
-    error: string // need to fix any
-    totalUsers: number // need to fix any
+    setNameCallback: (name: string) => void
+    addUser: (name: string) => void
+    error: string
+    totalUsers: number
     setError: (error: string) => void
 }
 
@@ -16,20 +18,15 @@ const Greeting: React.FC<GreetingPropsType> = (
 ) => {
 
 
-
-    const inputClass = error ? s.right : s.error // need to fix with (?:)
-
     const activeButton = name ? false : true
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-            if (e.currentTarget.value === ' ') {
-                setError('no spaces can be entered')
-            } else {
-                setNameCallback(e.currentTarget.value)
-                setError('')
-            }
-
-
+        if (e.currentTarget.value === ' ') {
+            setError('no spaces can be entered')
+        } else {
+            setNameCallback(e.currentTarget.value)
+            setError('')
+        }
 
 
     }
@@ -51,13 +48,20 @@ const Greeting: React.FC<GreetingPropsType> = (
 
     return (
         <div className={s.item}>
-            <input value={name}
-                   onChange={onChangeHandler}
-                   className={`${inputClass} ${s.input}`}
-                   onKeyPress={onKeyPressHendler}/>
-            <button onClick={onClickAddUser} disabled={activeButton} className={s.button}>add</button>
-            <span>{totalUsers}</span>
-            <div className={s.error_message}>{error}</div>
+            <div>
+                <SuperInputText
+                    value={name}
+                    onChange={onChangeHandler}
+                    className={`${s.input}`}
+                    error={error}
+                    onKeyPress={onKeyPressHendler}
+                />
+            </div>
+            <div className={s.button_container}>
+                <SuperButton onClick={onClickAddUser} disabled={activeButton}>add</SuperButton>
+
+                <span>{totalUsers}</span>
+            </div>
         </div>
     )
 }
