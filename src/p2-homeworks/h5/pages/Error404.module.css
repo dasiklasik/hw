@@ -1,0 +1,17 @@
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.number {
+    font-size: 160px;
+    font-weight: 900;
+}
+
+.words {
+    font-size: 30px;
+}
