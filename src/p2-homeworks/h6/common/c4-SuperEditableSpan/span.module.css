@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    height: 28px;
+}
+
+.span {
+    color: dodgerblue;
+    border-bottom: 1px dashed dodgerblue;
+    cursor: pointer;
+}
