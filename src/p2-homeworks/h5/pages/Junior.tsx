@@ -1,7 +1,8 @@
 import React from "react";
+import HW7 from "../../h7/HW7";
 
 export const Junior = () => {
     return (
-        <div>Здесь будут задания Junior</div>
+        <HW7/>
     )
 }
