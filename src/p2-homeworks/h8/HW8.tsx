@@ -2,9 +2,13 @@ import React, {useState} from 'react'
 import {homeWorkReducer} from './bll/homeWorkReducer'
 import SuperButton from '../h4/common/c2-SuperButton/SuperButton'
 
-// export type UserType =
+export type userType = {
+    _id: number
+    name: string
+    age: number
+}
 
-const initialPeople = [
+const initialPeople: Array<userType> = [
     {_id: 0, name: 'Кот', age: 3},
     {_id: 1, name: 'Александр', age: 66},
     {_id: 2, name: 'Коля', age: 16},
@@ -14,12 +18,11 @@ const initialPeople = [
 ]
 
 function HW8() {
-    const [people, setPeople] = useState<any>(initialPeople) // need to fix any
+    const [people, setPeople] = useState<Array<userType>>(initialPeople)
 
-    // need to fix any
-    const finalPeople = people.map((p: any) => (
+    const finalPeople = people.map((p: userType) => (
         <div key={p._id}>
-            some name, age
+            <span>{p.name}</span><span>{p.age}</span>
         </div>
     ))
 
