@@ -1,0 +1,20 @@
+.wrapper {
+    width: 250px;
+    margin-left: 20px;
+}
+
+.array {
+    width: 100%;
+}
+
+.arrayItem {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
