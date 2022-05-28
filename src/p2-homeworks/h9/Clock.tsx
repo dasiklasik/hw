@@ -6,26 +6,60 @@ function Clock() {
     const [date, setDate] = useState<Date>()
     const [show, setShow] = useState<boolean>(false)
 
+
+    const updateTime = () => {
+        let date = new Date();
+        setDate(date)
+    }
+
     const stop = () => {
-        // stop
+        clearInterval(timerId)
+        setTimerId(0)
     }
     const start = () => {
         stop()
         const id: number = window.setInterval(() => {
-            // setDate
+            updateTime()
         }, 1000)
+        updateTime()
         setTimerId(id)
     }
 
     const onMouseEnter = () => {
-        // show
+        setShow(true)
     }
     const onMouseLeave = () => {
-        // close
+        setShow(false)
     }
 
-    const stringTime = 'Time' // fix with date
-    const stringDate = 'Date' // fix with date
+    let day = '01'
+    let month = '01'
+    let year = '1999'
+
+    if (date) {
+        day = date.getDay().toString()
+        month = date.getMonth().toString()
+        year = date.getFullYear().toString()
+    }
+
+
+    let hours = date?.getHours();
+    let newHours: string = '00'
+    if (hours) {
+        newHours = hours.toString()
+        if (hours < 10) newHours = '0' + newHours
+    }
+
+
+    let minutes = '00'
+    let seconds = '00'
+    if (date) {
+        minutes = date.getMinutes().toString()
+        seconds = date.getSeconds().toString()
+    }
+    let stringTime = `${newHours}:${minutes}:${seconds}`
+    let stringDate = `${day}.${month}.${year}`
+
 
     return (
         <div>
