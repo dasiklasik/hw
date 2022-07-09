@@ -11,18 +11,21 @@ function HW11() {
             <hr/>
             homeworks 11
 
-            {/*should work (должно работать)*/}
             <div>
                 <span>{value1}</span>
                 <SuperRange
-                    // сделать так чтоб value1 изменялось
+                    onChangeRange={setValue1}
+                    value={value1}
                 />
             </div>
 
             <div>
                 <span>{value1}</span>
                 <SuperDoubleRange
-                    // сделать так чтоб value1 и value2 изменялось
+                    minValue={value1}
+                    maxValue={value2}
+                    setMinValue={setValue1}
+                    setMaxValue={setValue2}
                 />
                 <span>{value2}</span>
             </div>
