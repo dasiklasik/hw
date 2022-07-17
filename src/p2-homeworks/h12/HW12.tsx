@@ -9,7 +9,7 @@ const themes = ['dark', 'red', 'some'];
 
 function HW12() {
     const theme = useSelector<AppStoreType, string>(state => state.theme.theme)
-    debugger
+
     const dispatch = useDispatch()
 
     const onChangeCallback = (theme: string) => {
@@ -30,8 +30,7 @@ function HW12() {
                 options={themes}
                 value={theme}
                 onChangeOption={onChangeCallback}/>
-            {/*should work (должно работать)*/}
-            {/*SuperSelect or SuperRadio*/}
+
 
             <hr/>
         </div>
