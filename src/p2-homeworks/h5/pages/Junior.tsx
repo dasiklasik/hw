@@ -6,17 +6,19 @@ import HW9 from "../../h9/HW9";
 import {Provider} from "react-redux";
 import store from "../../h10/bll/store";
 import HW11 from "../../h11/HW11";
+import HW12 from "../../h12/HW12";
 
 export const Junior = () => {
     return (
         <>
-            <HW7/>
-            <HW8/>
-            <HW9/>
             <Provider store={store}>
+                <HW7/>
+                <HW8/>
+                <HW9/>
                 <HW10/>
+                <HW11/>
+                <HW12/>
             </Provider>
-            <HW11/>
         </>
     )
 }
