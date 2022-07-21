@@ -5,8 +5,13 @@ const instance = axios.create({
 })
 
 export const API = {
-    setSuccess: (success: boolean) => {
-        instance.put('', {success})
+    setSuccess: () => {
+        debugger
+        return instance.post('', {success: true})
             .then(response => response.data)
+            .catch(error => {
+                console.log({...error});
+                console.log(error.response ? error.response.data.errorText : error.message);
+            })
     }
 }

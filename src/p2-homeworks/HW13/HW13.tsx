@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import {Request} from "./Request";
 
 
 export const HW13 = () => {
@@ -14,7 +15,7 @@ export const HW13 = () => {
     return (
         <div>
             <h2>HW13</h2>
-            <button onClick={onClickHandler}>Click</button>
+            <Request/>
         </div>
     )
 }
